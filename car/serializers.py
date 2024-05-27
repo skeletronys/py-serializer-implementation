@@ -18,10 +18,25 @@ class CarSerializer(serializers.Serializer):
         return Car.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        instance.manufacturer = validated_data.get("manufacturer", instance)
-        instance.model = validated_data.get("model", instance)
-        instance.horse_powers = validated_data.get("horse_powers", instance)
-        instance.is_broken = validated_data.get("is_broken", instance)
-        instance.problem_description = validated_data.get("problem_description", instance)
+        instance.manufacturer = validated_data.get(
+            "manufacturer",
+            instance
+        )
+        instance.model = validated_data.get(
+            "model",
+            instance
+        )
+        instance.horse_powers = validated_data.get(
+            "horse_powers",
+            instance
+        )
+        instance.is_broken = validated_data.get(
+            "is_broken",
+            instance
+        )
+        instance.problem_description = validated_data.get(
+            "problem_description",
+            instance
+        )
         instance.save()
         return instance
